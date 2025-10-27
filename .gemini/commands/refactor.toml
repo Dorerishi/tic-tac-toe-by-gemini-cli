@@ -1,0 +1,28 @@
+
+name = "refactor"
+description = "Analyzes a given Python file and suggests refactoring improvements."
+
+[args]
+file_path = { type = "string", description = "The absolute path to the Python file to refactor." }
+
+script = """
+import os
+
+file_path = "$file_path"
+
+if not file_path.endswith('.py'):
+    print(f"Error: The provided file '{file_path}' is not a Python file.")
+else:
+    if not os.path.exists(file_path):
+        print(f"Error: The file '{file_path}' does not exist.")
+    else:
+        print(default_api.read_file(absolute_path=file_path))
+        print("""
+        Based on the above Python code from '""" + file_path + """', please suggest refactoring improvements for readability, efficiency, and maintainability. Consider aspects like:
+        - Function decomposition
+        - Variable naming
+        - Error handling
+        - Code duplication
+        - Algorithmic efficiency
+        """)
+"""

@@ -1,0 +1,20 @@
+Here are some suggestions to enhance the Tic-Tac-Toe game:
+
+1.  **Implement an Unbeatable AI Opponent:**
+    *   **Algorithm:** Use the "minimax" algorithm. This is a classic game theory algorithm that explores all possible moves to find the optimal one for the AI. It will make the AI play perfectly, resulting in either a win or a draw, but never a loss.
+    *   **Implementation:** This would involve creating a new function, `findBestMove()`, that the AI player calls instead of `get_player_move()`. This function would recursively evaluate the game state.
+
+2.  **Add Game Modes:**
+    *   Allow the user to choose between "Player vs. Player" and "Player vs. AI" at the start of the game. This would make the game more versatile.
+
+3.  **Keep Score:**
+    *   Add variables to track the scores for Player X, Player O, and draws across multiple games.
+    *   Display the current score after each game and ask the players if they want to play again.
+
+4.  **Allow Variable Board Size:**
+    *   Modify the `BOARD_SIZE` constant to be a variable that the user can set at the beginning of the game (e.g., 3 for 3x3, 4 for 4x4).
+    *   You would also need to adjust the winning condition (e.g., for a 4x4 board, you might require 4 in a row to win).
+
+5.  **Improved User Interface:**
+    *   **Clear the screen:** Before printing the board for each turn, clear the console screen (`os.system('cls')` for Windows or `os.system('clear')` for macOS/Linux) to make the display cleaner.
+    *   **Color:** Use ANSI escape codes to add color to the player markers (X and O) to make them stand out.
